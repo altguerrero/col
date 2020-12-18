@@ -60,18 +60,6 @@ const IndexPage = () => {
         }
       }
 
-      prodesa: file(
-        relativePath: { eq: "constructoras/prodesa.png" }
-        childImageSharp: { children: {} }
-      ) {
-        id
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-
       buttom: file(
         relativePath: { eq: "assets/buttom.png" }
         childImageSharp: { children: {} }
@@ -232,18 +220,7 @@ const IndexPage = () => {
             </div>
             
             <div className="w-1/2 mx-auto grid grid-cols-4 justify-items-center">
-              <Constructora>
-                <Img fluid={data.prodesa.childImageSharp.fluid} />
-              </Constructora>
-              <Constructora>
-                <Img fluid={data.prodesa.childImageSharp.fluid} />
-              </Constructora>
-              <Constructora>
-                <Img fluid={data.prodesa.childImageSharp.fluid} />
-              </Constructora>
-              <Constructora>
-                <Img fluid={data.prodesa.childImageSharp.fluid} />
-              </Constructora>
+  
             </div>
           </div>
           <div className="w-1/2 h-1 bg-primary-light mx-auto rounded"></div>
