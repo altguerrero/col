@@ -5,7 +5,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
-    "gatsby-plugin-manifest",
+    // "gatsby-plugin-manifest",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -16,5 +16,7 @@ module.exports = {
       },
       __key: "images",
     },
+   "gatsby-plugin-postcss",
+   "gatsby-plugin-emotion",
   ],
 };
