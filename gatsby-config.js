@@ -3,7 +3,7 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    //"gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     // "gatsby-plugin-manifest",
     "gatsby-plugin-sharp",
