@@ -10,5 +10,5 @@ module.exports = {
       path: "./src/images/"
     },
     __key: "images"
-  }, "gatsby-plugin-postcss", "gatsby-plugin-emotion"]
+  }, "gatsby-plugin-postcss", "gatsby-plugin-emotion", "gatsby-plugin-sass"]
 };

@@ -18,5 +18,6 @@ module.exports = {
     },
    "gatsby-plugin-postcss",
    "gatsby-plugin-emotion",
+   "gatsby-plugin-sass"
   ],
 };
