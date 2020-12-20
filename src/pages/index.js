@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Aside from "../components/Aside";
 import Footer from "../components/Footer";
 import Beta from "../components/Beta";
+import Beta2 from "../components/Beta2";
 
 // Section 1
 import styled from "@emotion/styled";
@@ -195,9 +196,11 @@ const IndexPage = () => {
         </section>
         <section className="container">
           <div className="grid grid-cols-2 py-20">
-            <div></div>
             <div>
-              <h3 className="block w-1/2 mx-auto text-2xl font-bold text-secondary">
+              <Beta2 />
+            </div>
+            <div>
+              <h3 className="text-center block w-1/2 mx-auto text-2xl font-bold text-secondary">
                 ¡Elige la casa que quieres donde siempre la quisiste!
               </h3>
               <div className="text-center text-gray-500 text-base mx-20 mt-12 ">

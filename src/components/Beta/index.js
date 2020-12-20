@@ -45,19 +45,61 @@ function Beta() {
       // }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
+      className="transform translate-x-10"
     >
       <SwiperSlide>
         <div className="relative">
           <Img fluid={data.davivienda.childImageSharp.fluid} />
-          <div className="bg-secondary absolute bottom-0 inline-block rounded p-4 mb-6 ml-6">
-            <p className="font-bold text-white text-4xl text-center">Financia hasta</p>
-            <p className="font-bold text-white text-4xl text-center"> el <span className="text-6xl">80%</span></p>
+          <div className="bg-secondary absolute bottom-0 inline-block rounded py-4 px-8 mb-6 ml-6">
+            <p className="font-bold text-white text-4xl text-center">
+              Financia hasta
+            </p>
+            <p className="font-bold text-white text-4xl text-center">
+              {" "}
+              el <span className="text-6xl">80%</span>
+            </p>
           </div>
         </div>
       </SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      <SwiperSlide>
+        {" "}
+        <Img fluid={data.davivienda.childImageSharp.fluid} />
+        <div className="bg-secondary absolute bottom-0 inline-block rounded py-4 px-8 mb-6 ml-6">
+          <p className="font-bold text-white text-4xl text-center">
+            Plazo de hasta 
+          </p>
+          <p className="font-bold text-white text-4xl text-center">
+            {" "}
+           <span className="text-6xl">30 años</span>
+          </p>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        {" "}
+        <Img fluid={data.davivienda.childImageSharp.fluid} />
+        <div className="bg-secondary absolute bottom-0 inline-block rounded py-4 px-8 mb-6 ml-6">
+          <p className="font-bold text-white text-4xl text-center">
+            Financia hasta
+          </p>
+          <p className="font-bold text-white text-4xl text-center">
+            {" "}
+            el <span className="text-6xl">80%</span>
+          </p>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        {" "}
+        <Img fluid={data.davivienda.childImageSharp.fluid} />
+        <div className="bg-secondary absolute bottom-0 inline-block rounded py-4 px-8 mb-6 ml-6">
+          <p className="font-bold text-white text-4xl text-center">
+            Financia hasta
+          </p>
+          <p className="font-bold text-white text-4xl text-center">
+            {" "}
+            el <span className="text-6xl">80%</span>
+          </p>
+        </div>
+      </SwiperSlide>
     </Swiper>
   );
 }
