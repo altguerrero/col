@@ -23,13 +23,13 @@ const links = [
 ];
 
 const Header = tw.header`
-  fixed w-full  bg-white shadow transition-all duration-300 
+  fixed w-full  bg-white shadow transition-all duration-300 z-50
 `;
 const Container = tw.div`
   container  relative   h-full
 `;
 const Logo = tw.div`
-  absolute top-0 mt-4 px-4 transition-all duration-300  
+  absolute top-0 mt-4 md:mt-3 px-4 transition-all duration-300  
 `;
 const Menu = tw.nav`
   w-full h-full  transition-all duration-300 
@@ -89,10 +89,10 @@ const NavMenu = () => {
           className={
             state
               ? "absolute flex flex-col transform pt-32"
-              : " hidden xl:block "
+              : "  xl:block opacity-0 xl:opacity-100 "
           }
         >
-          <List>
+          <List >
             {links.map((link) => (
               <Item>
                 <Link

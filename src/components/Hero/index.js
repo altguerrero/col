@@ -22,15 +22,15 @@ const Hero = () => {
   `);
 
   return (
-    <HeroBack image={data.hero.childImageSharp.fluid.originalImg}>
+    <HeroBack className="h-full lg:h-screen pt-20" image={data.hero.childImageSharp.fluid.originalImg}>
       <Container>
-        <GridContainer>
-          <div className="mx-12 flex flex-col justify-center">
+        <GridContainer data-aos="fade-up"  className="py-12 lg:py-0 gap-8 lg:gap-0">
+          <div className="mx-4 lg:mx-12 flex flex-col justify-center">
             <Title>¿Quieres comprar casa en Colombia?</Title>
-            <span className="block text-right text-xl text-primary-dark font-bold mx-10 mt-2">
+            <span className="block text-right text-lg sm:text-xl text-primary-dark font-bold mx-auto lg:mx-12 mt-2">
               ¡Este, es el camino!
             </span>
-            <p className="text-white text-lg mt-8">
+            <p className="text-white text-base -bottom-0sm:text-lg mt-8 w-3/4 lg:w-auto mx-auto">
               Accede a créditos hipotecarios y Leasing Habitacional con
               beneficios exclusivos para colombianos en el exterior, abre tu
               cuenta de ahorros y descubre más de 130 inmuebles por todo
@@ -38,11 +38,11 @@ const Hero = () => {
             </p>
           </div>
           <div>
-            <FormContainer>
-              <h3 className="text-white font-semibold text-2xl text-center leading-7">
+            <FormContainer className="w-3/4">
+              <h3 className="text-white font-semibold text-lg sm:text-2xl text-center leading-6">
                 Déjanos tu datos,
               </h3>
-              <h3 className="text-white font-semibold text-2xl text-center leading-7">
+              <h3 className="text-white font-semibold text-lg sm:text-2xl text-center leading-6">
                 ¡Nosotros te llamamos!
               </h3>
               <form className="mt-4">
@@ -88,11 +88,11 @@ const Hero = () => {
                 </select>
                 <button
                   type="submit"
-                  className="border border-white hover:bg-primary-light hover:border-primary-light transition-all duration-200 block rounded-lg text-center px-4 py-2 text-white w-full mt-4 text-lg"
+                  className="border border-white hover:bg-primary-light hover:border-primary-light transition-all duration-200 block rounded-lg text-center px-4 py-2 text-white w-full mt-4 text-base sm:text-lg"
                 >
                   ¡Quiero Tener mi casa en Colombia!
                 </button>
-                <label className="text-white text-center flex items-center justify-center mt-4">
+                <label className="text-white text-center flex flex-wrap	 items-center justify-center mt-4 text-xs">
                   <input
                     type="checkbox"
                     name="terminos"
@@ -101,7 +101,7 @@ const Hero = () => {
                     className="mr-2"
                   />
                   Acepto{" "}
-                  <a href="#" className="text-link px-1">
+                  <a href="#" className="text-link inline-block mx-1 ">
                     política de tratamiento
                   </a>{" "}
                   de datos
@@ -118,7 +118,6 @@ const Hero = () => {
 export default Hero;
 
 const HeroBack = styled.div`
-  height: calc(100vh - 80px);
   background: url("${(props) => props.image}") no-repeat fixed 100%;
   background-position: center;
   background-size: cover;
@@ -132,25 +131,26 @@ const HeroBack = styled.div`
     display: block;
     height: 100%;
     width: 100%;
-    postion: absolute;
+    position: absolute;
     top: 0;
     background-color: #2d2d2d;
     opacity: 0.75;
+   
   }
+
 `;
 
 const Container = tw.div`
- container absolute 
+ container  z-10
 `;
 const GridContainer = tw.div`
- grid grid-cols-2
+ grid lg:grid-cols-2
 `;
 const Title = tw.h1`
-  text-white font-bold text-6xl 
+  text-white font-bold text-2xl sm:text-4xl lg:text-5xl xl:text-6xl  text-center sm:text-left
 `;
 const FormContainer = styled.div`
   background-color: rgba(45, 45, 45, 0.75);
-  width: 75%;
   margin: 0 auto;
   padding: 1rem 1.75rem;
   border-radius: 10px;

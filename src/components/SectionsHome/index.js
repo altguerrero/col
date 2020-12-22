@@ -87,54 +87,7 @@ const SectionsHome = () => {
   `);
   return (
     <>
-      <section>
-        <div className="container grid grid-cols-2 py-20">
-          <div>
-            <h2 className="text-center font-bold">
-              <span className="block text-2xl text-secondary">Solicita tu</span>
-              <span className="block text-4xl text-primary-light">
-                Crédito Hipotecario
-              </span>
-              <span className="block text-2xl text-secondary">
-                con uno de nuestros aliados
-              </span>
-            </h2>
-            <div className="grid grid-cols-2 w-2/4 gap-12 mx-auto mt-12">
-              <Aliado>
-                <Img fluid={data.davivienda.childImageSharp.fluid} />
-              </Aliado>
-              <Aliado>
-                <Img fluid={data.bbva.childImageSharp.fluid} />
-              </Aliado>
-              <Aliado>
-                <Img fluid={data.bancolombia.childImageSharp.fluid} />
-              </Aliado>
-              <Aliado>
-                <Img fluid={data.giros.childImageSharp.fluid} />
-              </Aliado>
-            </div>
-            <div className="text-center w-2/3 mx-auto text-gray-500 text-base mx-20 mt-12 ">
-              <p>
-                Disfruta de tasas de interés especiales de{" "}
-                <b>x.x% efectivo anual</b>, además de{" "}
-                <strong>beneficios exclusivos</strong> para colombianos en el
-                exterior.
-              </p>
-            </div>
-
-            <ButtomMain
-              className="mt-12 mx-auto"
-              image={data.buttom.childImageSharp.fluid.originalImg}
-            >
-              Solicita tu Crédito
-            </ButtomMain>
-          </div>
-
-          <div>
-            <Beta />
-          </div>
-        </div>
-      </section>
+     
       <section>
         <div className="w-1/2 h-1 bg-primary-light mx-auto rounded"></div>
         <div className="bg-gray-200">
@@ -339,24 +292,7 @@ const SectionsHome = () => {
   );
 };
 
-const Aliado = styled.div`
-  max-width: 150px;
 
-  & img {
-    filter: grayscale(100%);
-    transition: all .3s;
-    opacity: .75 !important;
-    flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-      filter: grayscale(0%);
-      opacity: 1 !important;
-    }
-  }
-
-`;
 
 const Constructora = styled.div`
   max-width: 100px;
