@@ -8,7 +8,7 @@ const Section2 = () => {
     <section className="">
       <div className="w-1/2 h-1 bg-primary-light mx-auto rounded"></div>
       <div className="bg-gray-200">
-        <div data-aos="fade-left" className="px-4">
+        <div data-aos="fade-up" className="px-4">
           <p className="text-2xl font-bold text-secondary text-center py-8">
             Estamos comprometidos con las metas de los colombianos
           </p>

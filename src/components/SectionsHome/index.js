@@ -88,55 +88,7 @@ const SectionsHome = () => {
   return (
     <>
      
-      <section>
-        <div className="w-1/2 h-1 bg-primary-light mx-auto rounded"></div>
-        <div className="bg-gray-200">
-          <p className="text-2xl font-bold text-secondary text-center py-8">
-            Estamos comprometidos con las metas de los colombianos
-          </p>
-          <div className="w-1/2 mx-auto grid grid-cols-3">
-            <div className="text-center">
-              <span className="block font-bold text-primary-light text-5xl">
-                70 K
-              </span>
-              <h3 className="text-secondary pt-4">
-                <span className="block text-base font-semibold">
-                  Familias colombianas
-                </span>
-                <span className="block text-2xl font-bold">Asesoradas</span>
-              </h3>
-            </div>
-            <div className="text-center">
-              <span className="block font-bold text-primary-light text-5xl">
-                5,8 K
-              </span>
-              <h3 className="text-secondary pt-4">
-                <span className="block text-base font-semibold">
-                  Casas en todo Colombia
-                </span>
-                <span className="block text-2xl font-bold">Entregadas</span>
-              </h3>
-            </div>
-            <div className="text-center">
-              <span className="block font-bold text-primary-light text-5xl">
-                13
-              </span>
-              <h3 className="text-secondary pt-4">
-                <span className="block text-base font-semibold">
-                  Países con atención
-                </span>
-                <span className="block text-2xl font-bold">Permanente</span>
-              </h3>
-            </div>
-          </div>
-
-          <p className="text-lg text-secondary text-center py-8">
-            ¡Ahora queremos ayudarte a ti a comprar tu casa en Colombia desde el
-            exterior!
-          </p>
-        </div>
-        <div className="w-1/2 h-1 bg-primary-light mx-auto rounded"></div>
-      </section>
+      
       <section className="container">
         <div className="grid grid-cols-2 py-20">
           <div>
