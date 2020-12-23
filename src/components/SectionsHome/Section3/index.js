@@ -71,6 +71,18 @@ const Section3 = () => {
         }
       }
 
+      flecha: file(
+        relativePath: { eq: "assets/flecha.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
+          }
+        }
+      }
+
       ahorro: file(
         relativePath: { eq: "sections/ahorro.jpg" }
         childImageSharp: { children: {} }
@@ -111,7 +123,12 @@ const Section3 = () => {
             <span className="block text-base text-secondary">
               Solicita más información
             </span>
-            <ButtomMain image={data.buttom.childImageSharp.fluid.originalImg}>
+            <ButtomMain
+              className="font-bold"
+              image={data.buttom.childImageSharp.fluid.originalImg}
+              subimage={data.flecha.childImageSharp.fluid.originalImg}
+              onClick={() => setModal(!modal)}
+            >
               Explora
             </ButtomMain>
           </div>
@@ -133,4 +150,19 @@ const ButtomMain = styled.button`
   width: 240px;
   height: 60px;
   font-size: 1.125rem;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 60px;
+    background-image: url("${(props) => props.subimage}");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+  }
 `;

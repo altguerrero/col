@@ -71,6 +71,18 @@ const Section1 = () => {
         }
       }
 
+      flecha: file(
+        relativePath: { eq: "assets/flecha.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
+          }
+        }
+      }
+
       ahorro: file(
         relativePath: { eq: "sections/ahorro.jpg" }
         childImageSharp: { children: {} }
@@ -126,8 +138,9 @@ const Section1 = () => {
           </div>
 
           <ButtomMain
-            className="mt-12 mx-auto"
-            image={data.buttom.childImageSharp.fluid.originalImg}
+            className="mt-12 mx-auto font-bold"
+            image={data.buttom.childImageSharp.fluid.originalImg} 
+            subimage={data.flecha.childImageSharp.fluid.originalImg}
             onClick={() => setModal(!modal)}
           >
             Solicita tu Crédito
@@ -146,7 +159,18 @@ const Section1 = () => {
       >
         <Container className="z-50">
           <GridContainer className="py-12 lg:py-0 gap-8 lg:gap-0">
-            <div className="mx-4 lg:mx-12 flex flex-col justify-center">
+            <button
+              onClick={() => setModal(false)}
+              className={`hamburger hamburger--slider z-50 is-active fixed mt-24 top-0 right-0 mx-4 focus:outline-none ${
+                state ? "is-active hidden" : ""
+              } `}
+              type="button"
+            >
+              <span className="hamburger-box">
+                <span className="hamburger-inner"></span>
+              </span>
+            </button>
+            <div className="mx-4 lg:mx-12 flex flex-col justify-center mt-24 lg:mt-0">
               <Title>Aquí inicias tu camino hacia tu casa en Colombia</Title>
               <span className="block text-right text-lg sm:text-xl text-primary-light font-bold mx-auto lg:mx-12 mt-2">
                 ¡Estamos contigo!
@@ -232,17 +256,6 @@ const Section1 = () => {
             </div>
           </GridContainer>
         </Container>
-        <button
-          onClick={() => setstate(!state)}
-          className={`inline-block xl:hidden hamburger hamburger--slider absolute right-0 mx-4 focus:outline-none ${
-            state ? "is-active hidden" : ""
-          } `}
-          type="button"
-        >
-          <span className="hamburger-box">
-            <span className="hamburger-inner"></span>
-          </span>
-        </button>
       </Modal>
     </section>
   );
@@ -275,6 +288,22 @@ const ButtomMain = styled.button`
   width: 240px;
   height: 60px;
   font-size: 1.125rem;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 60px;
+    background-image: url("${(props) => props.subimage}");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right:-20px;
+    bottom:0;
+    
+  }
 `;
 
 const Modal = styled.div`

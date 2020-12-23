@@ -6,6 +6,8 @@ import tw from "twin.macro";
 import { Pig, Bill } from "../../Icons";
 
 const Section4 = () => {
+  const [modal, setModal] = useState(false);
+  
   const data = useStaticQuery(graphql`
     query {
       ahorro: file(
@@ -16,6 +18,18 @@ const Section4 = () => {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      flecha: file(
+        relativePath: { eq: "assets/flecha.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
           }
         }
       }
@@ -78,8 +92,10 @@ const Section4 = () => {
           </div>
 
           <ButtomMain
-            className="mt-12 mx-auto"
+            className="mt-12 mx-auto font-bold"
             image={data.buttom.childImageSharp.fluid.originalImg}
+            subimage={data.flecha.childImageSharp.fluid.originalImg}
+            onClick={() => setModal(!modal)}
           >
             ¡Abre tu cuenta!
           </ButtomMain>
@@ -95,6 +111,8 @@ const Section4 = () => {
   );
 };
 
+export default Section4;
+
 const ButtomMain = styled.button`
   background: url("${(props) => props.image}");
   background-position: center;
@@ -105,5 +123,19 @@ const ButtomMain = styled.button`
   width: 240px;
   height: 60px;
   font-size: 1.125rem;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 60px;
+    background-image: url("${(props) => props.subimage}");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+  }
 `;
-export default Section4;

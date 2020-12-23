@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
-
+import Img from "gatsby-image";
 
 const Section6 = () => {
+  const [modal, setModal] = useState(false);
+
   const data = useStaticQuery(graphql`
     query {
-      ahorro: file(
-        relativePath: { eq: "sections/ahorro.jpg" }
+      videoBack: file(
+        relativePath: { eq: "assets/video_back.jpg" }
         childImageSharp: { children: {} }
       ) {
         id
@@ -20,6 +22,18 @@ const Section6 = () => {
 
       buttom: file(
         relativePath: { eq: "assets/buttom.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
+          }
+        }
+      }
+
+      flecha: file(
+        relativePath: { eq: "assets/flecha.png" }
         childImageSharp: { children: {} }
       ) {
         id
@@ -50,8 +64,10 @@ const Section6 = () => {
             </p>
           </div>
           <ButtomMain
-            className="mt-8 mx-auto"
+            className="mt-8 mx-auto font-bold"
             image={data.buttom.childImageSharp.fluid.originalImg}
+            subimage={data.flecha.childImageSharp.fluid.originalImg}
+            onClick={() => setModal(!modal)}
           >
             ¡Hazlo ahora!
           </ButtomMain>
@@ -60,8 +76,15 @@ const Section6 = () => {
       </section>
 
       <section className="container grid grid-cols-2 py-20">
-        <div></div>
         <div>
+          <VideoContainer>
+            <Img
+              className=""
+              fluid={data.videoBack.childImageSharp.fluid}
+            />
+          </VideoContainer>
+        </div>
+        <div className="flex flex-col justify-around">
           <h3 className="text-center">
             <span className="block text-4xl font-bold text-secondary">
               #TodosSomos
@@ -94,6 +117,23 @@ const ButtomMain = styled.button`
   width: 240px;
   height: 60px;
   font-size: 1.125rem;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 60px;
+    background-image: url("${(props) => props.subimage}");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+  }
 `;
+
+const VideoContainer = styled.div``
 
 export default Section6;
