@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 import Gallery from "./gallery";
 import tw from "twin.macro";
 
-const Section1 = (e) => {
+const Section1 = () => {
   const [state, setstate] = useState(false);
   const [modal, setModal] = useState(false);
 

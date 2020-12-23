@@ -31,6 +31,66 @@ function Beta2() {
         }
       }
 
+      valle: file(
+        relativePath: { eq: "slides/valle.jpg" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      eje: file(
+        relativePath: { eq: "slides/eje.jpg" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      cundinamarca: file(
+        relativePath: { eq: "slides/cundinamarca.jpg" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      caribe: file(
+        relativePath: { eq: "slides/caribe.jpg" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      colombia: file(
+        relativePath: { eq: "slides/colombia.jpg" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
       davivienda: file(
         relativePath: { eq: "slides/slide_1_1.jpg" }
         childImageSharp: { children: {} }
@@ -51,7 +111,6 @@ function Beta2() {
         slidesPerView={3}
         pagination={{ clickable: true }}
         className="bg-red"
-        loop={true}
         // autoplay={{
         //   delay: 2500,
         //   disableOnInteraction: false,
@@ -74,60 +133,60 @@ function Beta2() {
         </SwiperSlide>
         <SwiperSlide>
           <SlideContainer className="relative rounded shadow-xl	 overflow-hidden">
-            <Img fluid={data.antioquia.childImageSharp.fluid} />
+            <Img fluid={data.valle.childImageSharp.fluid} />
             <h3 className="text-white text-2xl font-bold absolute bottom-0 left-0 z-10 ml-4 mb-4 ">
               Valle
             </h3>
             <h4 className="block absolute mt-8 w-full text-white font-bold top-0 text-center z-10">
-              <span className="block text-7xl">30</span>
+              <span className="block text-7xl">12</span>
               <span className="block text-2xl">Inmuebles</span>
             </h4>
           </SlideContainer>
         </SwiperSlide>
         <SwiperSlide>
           <SlideContainer className="relative rounded shadow-xl	 overflow-hidden">
-            <Img fluid={data.antioquia.childImageSharp.fluid} />
+            <Img fluid={data.eje.childImageSharp.fluid} />
             <h3 className="text-white text-2xl font-bold absolute bottom-0 left-0 z-10 ml-4 mb-4 ">
               Eje Cafetero
             </h3>
             <h4 className="block absolute mt-8 w-full text-white font-bold top-0 text-center z-10">
-              <span className="block text-7xl">30</span>
+              <span className="block text-7xl">9</span>
               <span className="block text-2xl">Inmuebles</span>
             </h4>
           </SlideContainer>
         </SwiperSlide>
         <SwiperSlide>
           <SlideContainer className="relative rounded shadow-xl	 overflow-hidden">
-            <Img fluid={data.antioquia.childImageSharp.fluid} />
+            <Img fluid={data.cundinamarca.childImageSharp.fluid} />
             <h3 className="text-white text-2xl font-bold absolute bottom-0 left-0 z-10 ml-4 mb-4 ">
               Cundinamarca
             </h3>
             <h4 className="block absolute mt-8 w-full text-white font-bold top-0 text-center z-10">
-              <span className="block text-7xl">30</span>
+              <span className="block text-7xl">50</span>
               <span className="block text-2xl">Inmuebles</span>
             </h4>
           </SlideContainer>
         </SwiperSlide>
         <SwiperSlide>
-          <SlideContainer className="relative rounded shadow-xl	 overflow-hidden">
-            <Img fluid={data.antioquia.childImageSharp.fluid} />
+          <SlideContainer className="relative rounded shadow-xl	 overflow-hidden mb-12">
+            <Img fluid={data.caribe.childImageSharp.fluid} />
             <h3 className="text-white text-2xl font-bold absolute bottom-0 left-0 z-10 ml-4 mb-4 ">
               Costa Caribe
             </h3>
             <h4 className="block absolute mt-8 w-full text-white font-bold top-0 text-center z-10">
-              <span className="block text-7xl">30</span>
+              <span className="block text-7xl">6</span>
               <span className="block text-2xl">Inmuebles</span>
             </h4>
           </SlideContainer>
         </SwiperSlide>
         <SwiperSlide>
           <SlideContainer className="relative rounded shadow-xl	 overflow-hidden">
-            <Img fluid={data.antioquia.childImageSharp.fluid} />
+            <Img fluid={data.colombia.childImageSharp.fluid} />
             <h3 className="text-white text-2xl font-bold absolute bottom-0 left-0 z-10 ml-4 mb-4 ">
               Resto del país
             </h3>
             <h4 className="block absolute mt-8 w-full text-white font-bold top-0 text-center z-10">
-              <span className="block text-7xl">30</span>
+              <span className="block text-7xl">47</span>
               <span className="block text-2xl">Inmuebles</span>
             </h4>
           </SlideContainer>
