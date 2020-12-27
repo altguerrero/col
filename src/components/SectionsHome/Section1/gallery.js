@@ -19,8 +19,30 @@ SwiperCore.use([Pagination, Navigation, Autoplay]);
 function Beta() {
   const data = useStaticQuery(graphql`
     query {
-      davivienda: file(
-        relativePath: { eq: "slides/slide_1_1.jpg" }
+      slide1: file(
+        relativePath: { eq: "slides/slide_1.jpg" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      slide2: file(
+        relativePath: { eq: "slides/slide_1_2.jpg" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      slide3: file(
+        relativePath: { eq: "slides/slide_1_3.jpg" }
         childImageSharp: { children: {} }
       ) {
         id
@@ -38,12 +60,12 @@ function Beta() {
         spaceBetween={50}
         slidesPerView={1}
         pagination={{ clickable: true }}
-        className="bg-red"
+        className=""
         loop={true}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
         className=""
@@ -51,50 +73,44 @@ function Beta() {
         <SwiperSlide>
           <div className="relative">
             <Img
-              className="block rounded-lg overflow-hidden mb-12 ml-12"
-              fluid={data.davivienda.childImageSharp.fluid}
+              className="block rounded-lg overflow-hidden mb-12 sm:ml-12 "
+              fluid={data.slide1.childImageSharp.fluid}
             />
-            <div className="message absolute bottom-0 inline-block py-4 pl-16 pr-8 mb-8 xl:mb-16">
-              <p className="font-bold text-white text-2xl lg:text-4xl text-center">
-                Financia hasta
-              </p>
-              <p className="font-bold text-white text-2xl lg:text-4xl text-center">
+            <Description className="message absolute bottom-0 inline-block py-4 pl-16 pr-8 mb-8 xl:mb-16">
+              <p className="font-bold text-white text-center">Financia hasta</p>
+              <p className="font-bold text-white text-center">
                 {" "}
-                el <span className="text-4xl lg:text-6xl">80%</span>
+                el <span>80</span>%
               </p>
-            </div>
+            </Description>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="relative">
             <Img
-              className="block rounded-lg overflow-hidden mb-12 ml-12"
-              fluid={data.davivienda.childImageSharp.fluid}
+              className="block rounded-lg overflow-hidden mb-12 sm:ml-12 "
+              fluid={data.slide2.childImageSharp.fluid}
             />
-            <div className="message absolute bottom-0 inline-block py-4 pl-16 pr-8 mb-8 xl:mb-16">
-              <p className="font-bold text-white text-2xl lg:text-4xl text-center">
-                Plazo de hasta
+            <Description className="message absolute bottom-0 inline-block py-4 pl-16 pr-8 mb-8 xl:mb-16">
+              <p className="font-bold text-white text-center">Plazo de hasta</p>
+              <p className="font-bold text-white text-center">
+                <span>30 años</span>
               </p>
-              <p className="font-bold text-white text-2xl lg:text-4xl text-center">
-                <span className="text-4xl lg:text-6xl">30 años</span>
-              </p>
-            </div>
+            </Description>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="relative">
             <Img
-              className="block rounded-lg overflow-hidden mb-12 ml-12"
-              fluid={data.davivienda.childImageSharp.fluid}
+              className="block rounded-lg overflow-hidden mb-12 sm:ml-12"
+              fluid={data.slide3.childImageSharp.fluid}
             />
-            <div className="message absolute bottom-0 inline-block py-4 pl-16 pr-8 mb-8 xl:mb-16">
-              <p className="font-bold text-white text-2xl lg:text-4xl text-center">
-                Cuota fija en
+            <Description className="message absolute bottom-0 inline-block py-4 pl-16 pr-8 mb-8 xl:mb-16">
+              <p className="font-bold text-white text-center">Cuota fija en</p>
+              <p className="font-bold text-white text-center">
+                <span>Pesos</span>
               </p>
-              <p className="font-bold text-white text-2xl lg:text-4xl text-center">
-                <span className="text-4xl lg:text-6xl">Pesos</span>
-              </p>
-            </div>
+            </Description>
           </div>
         </SwiperSlide>
       </Swiper>
@@ -115,5 +131,24 @@ const SliderContainer = styled.div`
     }
   }
   & .swiper-container {
+  }
+`;
+
+const Description = styled.div`
+  & p {
+    line-height: 1;
+    font-size: 23.5px;
+  }
+  & span {
+    font-size: 45px;
+  }
+  @media (min-width: 1024px) {
+    & p {
+      font-size: 47px;
+      line-height: 1;
+    }
+    & span {
+      font-size: 90px;
+    }
   }
 `;

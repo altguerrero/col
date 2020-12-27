@@ -3,11 +3,11 @@ import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import tw from "twin.macro";
-import { Pig, Bill } from "../../Icons";
+import { Pig, Bill, Card } from "../../Icons";
 
 const Section4 = () => {
   const [modal, setModal] = useState(false);
-  
+
   const data = useStaticQuery(graphql`
     query {
       ahorro: file(
@@ -49,50 +49,49 @@ const Section4 = () => {
   `);
   return (
     <section>
-      <div className="grid grid-cols-2 py-20">
-        <div>
+      <div className="container ml-auto mr-auto lg:mr-0 lg:grid grid-cols-2 py-20 transform lg:translate-x-4">
+        <div className="mb-12 lg:mb-0 px-4">
           <h2 className="text-center font-bold">
-            <span className="block text-2xl text-secondary">Solicita tu</span>
-            <span className="block text-4xl text-primary-light">
+            <TitleMd className="block text-secondary">Solicita tu</TitleMd>
+            <TitleXl className="block text-primary-light">
               Cuenta de ahorros
-            </span>
-            <span className="block text-2xl text-secondary">Bancolombia</span>
+            </TitleXl>
+            <TitleMd className="block text-secondary">Bancolombia</TitleMd>
           </h2>
-
-          <div className="text-center w-2/3 mx-auto text-gray-500 text-base mx-20 mt-12 ">
+          <div className="text-center sm:w-2/3 mx-auto text-gray-500 text-lg mx-20 mt-12 ">
             <p>
               Con ella no solo ahorraras el dinero para que cumplas tu meta de
               tener casa nueva en Colombia, sino que adicional podrás:
             </p>
           </div>
 
-          <div className="w-2/3 mx-auto grid grid-cols-3 mt-8">
+          <div className="xl:px-12 mx-auto grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-0 mt-8">
             <div className="flex flex-col items-center">
               <Pig wh="w-16 h-16 text-primary-light" />
-              <h3 className="block mt-4 text-secondary font-bold text-center">
+              <h3 className="block mt-4 w-40 text-secondary font-bold text-center text-lg sm:text-xl">
                 Transferir dinero a Colombia
               </h3>
             </div>
             <div className="flex flex-col items-center">
               <Bill wh="w-16 h-16 text-primary-light" />
-              <h3 className="block mt-4 text-secondary font-bold text-center">
+              <h3 className="block mt-4 w-40 text-secondary font-bold text-center text-lg sm:text-xl">
                 Recibir Giros Internacionales
               </h3>
             </div>
-            <div className="flex flex-col items-center">
-              <Bill wh="w-16 h-16 text-primary-light" />
-              <h3 className="block mt-4 text-secondary font-bold text-center">
+            <div className="flex flex-col items-center col-span-2 sm:col-span-1">
+              <Card wh="w-16 h-16 text-primary-light " />
+              <h3 className="block mt-4 w-40 text-secondary font-bold text-center text-lg sm:text-xl">
                 Realizar pagos a terceros
               </h3>
             </div>
           </div>
 
-          <div className="text-center font-semibol text-gray-700 mt-12">
+          <div className="text-center font-semibol text-gray-700 mt-12 text-base sm:text-lg">
             <p>"Frase motivadora"</p>
           </div>
 
           <ButtomMain
-            className="mt-12 mx-auto font-bold"
+            className="mt-12 mx-auto font-bold text-xl"
             image={data.buttom.childImageSharp.fluid.originalImg}
             subimage={data.flecha.childImageSharp.fluid.originalImg}
             onClick={() => setModal(!modal)}
@@ -102,8 +101,8 @@ const Section4 = () => {
         </div>
 
         <div className="">
-          <div className="mt-12 ml-8 transform translate-x-16">
-            <Img className="" fluid={data.ahorro.childImageSharp.fluid} />
+          <div className="">
+            <Img className="w-full" fluid={data.ahorro.childImageSharp.fluid} />
           </div>
         </div>
       </div>
@@ -122,7 +121,6 @@ const ButtomMain = styled.button`
   display: block;
   width: 240px;
   height: 60px;
-  font-size: 1.125rem;
   position: relative;
 
   &:before {
@@ -137,5 +135,21 @@ const ButtomMain = styled.button`
     position: absolute;
     right: -20px;
     bottom: 0;
+  }
+`;
+
+const TitleMd = styled.span`
+  font-size: 25px;
+  line-height: 0.5;
+
+  @media (min-width: 640px) {
+    font-size: 35px;
+  }
+`;
+const TitleXl = styled.span`
+  font-size: 30px;
+
+  @media (min-width: 640px) {
+    font-size: 50px;
   }
 `;

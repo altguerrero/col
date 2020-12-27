@@ -7,7 +7,7 @@ const List = tw.ul`
     block h-screen mt-20 mr-6  top-0 right-0 flex flex-col justify-center fixed z-50
 `;
 const Item = tw.li`
-    mb-3 text-white hover:text-primary-dark transition-all duration-200 transform hover:scale-110
+    mb-3 text-white hover:text-primary-light transition-all duration-200 transform hover:scale-110
 `;
 
 const Link = styled.a`

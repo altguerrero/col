@@ -12,49 +12,93 @@ const Section1 = () => {
   const data = useStaticQuery(graphql`
     query {
       davivienda: file(
-        relativePath: { eq: "aliados/davivienda.jpg" }
+        relativePath: { eq: "aliados/davivienda_normal.png" }
         childImageSharp: { children: {} }
       ) {
         id
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            originalImg
+          }
+        }
+      }
+      daviviendaHover: file(
+        relativePath: { eq: "aliados/davivienda_hover.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
           }
         }
       }
 
-      bbva: file(
-        relativePath: { eq: "aliados/bbva.jpg" }
+      banco: file(
+        relativePath: { eq: "aliados/banco_normal.png" }
         childImageSharp: { children: {} }
       ) {
         id
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            originalImg
+          }
+        }
+      }
+      bancoHover: file(
+        relativePath: { eq: "aliados/banco_hover.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
           }
         }
       }
 
       bancolombia: file(
-        relativePath: { eq: "aliados/bancolombia.jpg" }
+        relativePath: { eq: "aliados/bancolombia_normal.png" }
         childImageSharp: { children: {} }
       ) {
         id
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            originalImg
+          }
+        }
+      }
+      bancolombiaHover: file(
+        relativePath: { eq: "aliados/bancolombia_hover.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
           }
         }
       }
 
       giros: file(
-        relativePath: { eq: "aliados/giros.jpg" }
+        relativePath: { eq: "aliados/giros_normal.png" }
         childImageSharp: { children: {} }
       ) {
         id
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            originalImg
+          }
+        }
+      }
+      girosHover: file(
+        relativePath: { eq: "aliados/giros_hover.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
           }
         }
       }
@@ -98,59 +142,63 @@ const Section1 = () => {
   `);
   return (
     <section>
-      <div className="grid lg:grid-cols-2 py-20" data-aos="fade-right">
-        <div className="">
-          <h2 className="text-center font-bold">
-            <span className="block text-lg sm:text-2xl text-secondary">
-              Solicita tu
-            </span>
-            <span className="block text-2xl sm:text-4xl text-primary-light">
-              Crédito Hipotecario
-            </span>
-            <span className="block text-lg sm:text-2xl text-secondary">
-              con uno de nuestros aliados
-            </span>
-          </h2>
-          <div className="grid grid-cols-2 w-2/4  gap-12 mx-auto mt-12">
-            <Aliado className="">
-              <Img className="" fluid={data.davivienda.childImageSharp.fluid} />
-            </Aliado>
-            <Aliado className="">
-              <Img className="" fluid={data.bbva.childImageSharp.fluid} />
-            </Aliado>
-            <Aliado className="">
-              <Img
-                className=""
-                fluid={data.bancolombia.childImageSharp.fluid}
+      <Container className="mx-auto lg:ml-auto">
+        <div className="lg:grid lg:grid-cols-2 py-20 ">
+          <div className="mb-12 lg:mb-0 px-4 sm:px-0">
+            <h2 className="text-center font-bold">
+              <TitleMd className="block text-secondary">Solicita tu</TitleMd>
+              <TitleXl className="block text-primary-light">
+                Crédito Hipotecario
+              </TitleXl>
+              <TitleMd className="block text-secondary">
+                con uno de nuestros aliados
+              </TitleMd>
+            </h2>
+            <div className="grid md:px-24 lg:px-0 grid-cols-2 xl:px-16 gap-4 sm:gap-12 mx-auto mt-12">
+              <LogoAliado
+                normal={data.davivienda.childImageSharp.fluid.originalImg}
+                hover={data.daviviendaHover.childImageSharp.fluid.originalImg}
               />
-            </Aliado>
-            <Aliado className="">
-              <Img className="" fluid={data.giros.childImageSharp.fluid} />
-            </Aliado>
-          </div>
-          <div className="text-center w-2/3 mx-auto text-gray-500 text-base mx-20 mt-12 ">
-            <p>
-              Disfruta de tasas de interés especiales de{" "}
-              <b>x.x% efectivo anual</b>, además de{" "}
-              <strong>beneficios exclusivos</strong> para colombianos en el
-              exterior.
-            </p>
+
+              <LogoAliado
+                normal={data.banco.childImageSharp.fluid.originalImg}
+                hover={data.bancoHover.childImageSharp.fluid.originalImg}
+              />
+
+              <LogoAliado
+                normal={data.bancolombia.childImageSharp.fluid.originalImg}
+                hover={data.bancolombiaHover.childImageSharp.fluid.originalImg}
+              />
+
+              <LogoAliado
+                normal={data.giros.childImageSharp.fluid.originalImg}
+                hover={data.girosHover.childImageSharp.fluid.originalImg}
+              />
+            </div>
+            <Description className="text-center mx-auto text-gray-500 mx-20 mt-12 ">
+              <p>
+                Disfruta de tasas de interés especiales de{" "}
+                <b>x.x% efectivo anual</b>, además de{" "}
+                <strong>beneficios exclusivos</strong> para colombianos en el
+                exterior.
+              </p>
+            </Description>
+
+            <ButtomMain
+              className="mt-12 mx-auto text-xl  font-bold"
+              image={data.buttom.childImageSharp.fluid.originalImg}
+              subimage={data.flecha.childImageSharp.fluid.originalImg}
+              onClick={() => setModal(!modal)}
+            >
+              Solicita tu Crédito
+            </ButtomMain>
           </div>
 
-          <ButtomMain
-            className="mt-12 mx-auto font-bold"
-            image={data.buttom.childImageSharp.fluid.originalImg} 
-            subimage={data.flecha.childImageSharp.fluid.originalImg}
-            onClick={() => setModal(!modal)}
-          >
-            Solicita tu Crédito
-          </ButtomMain>
+          <GalleryContainer className="lg:w-auto mx-auto lg:mx-0">
+            <Gallery />
+          </GalleryContainer>
         </div>
-
-        <div className="w-96 lg:w-auto mx-auto lg:mx-0 mt-12 lg:mt-0">
-          <Gallery />
-        </div>
-      </div>
+      </Container>
       {/* Modal */}
       <Modal
         className={`flex overflow-y-auto pt-20 justify-center items-center fixed top-0 left-0 h-full w-full transform transition-all duration-300  ${
@@ -263,18 +311,63 @@ const Section1 = () => {
 
 export default Section1;
 
-const Aliado = styled.div`
-  max-width: 150px;
+const GalleryContainer = styled.span`
+  width: 100%;
+  max-width: 500px;
 
-  & img {
-    filter: grayscale(100%);
-    transition: all 0.3s;
-    opacity: 0.75 !important;
+  @media (min-width: 1024px) {
+    max-width: 100%;
+  }
+`;
 
-    &:hover {
-      filter: grayscale(0%);
-      opacity: 1 !important;
+const TitleMd = styled.span`
+  font-size: 25px;
+  line-height: 0.5;
+
+  @media (min-width: 640px) {
+    font-size: 35px;
+  }
+`;
+const TitleXl = styled.span`
+  font-size: 30px;
+
+  @media (min-width: 640px) {
+    font-size: 50px;
+  }
+`;
+const Description = styled.div`
+  max-width: 586px;
+  
+  & p {
+    font-size: 15px;
+  }
+  @media (min-width: 640px) {
+    & p {
+      font-size: 19px;
     }
+  }
+`;
+
+const LogoAliado = styled.div`
+  background: url("${(props) => props.normal}");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 130px;
+  height: 80px;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+
+  &:hover {
+    background: url("${(props) => props.hover}");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scale(1.125);
+  }
+
+  @media (min-width: 640px) {
+    width: 200px;
   }
 `;
 
@@ -287,7 +380,6 @@ const ButtomMain = styled.button`
   display: block;
   width: 240px;
   height: 60px;
-  font-size: 1.125rem;
   position: relative;
 
   &:before {
@@ -300,9 +392,8 @@ const ButtomMain = styled.button`
     background-position: center;
     background-repeat: no-repeat;
     position: absolute;
-    right:-20px;
-    bottom:0;
-    
+    right: -20px;
+    bottom: 0;
   }
 `;
 

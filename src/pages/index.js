@@ -14,6 +14,7 @@ import Section3 from "../components/SectionsHome/Section3";
 import Section4 from "../components/SectionsHome/Section4";
 import Section5 from "../components/SectionsHome/Section5";
 import Section6 from "../components/SectionsHome/Section6";
+import Section7 from "../components/SectionsHome/Section7";
 
 
 // markup
@@ -32,6 +33,7 @@ const IndexPage = () => {
         <Section4 />
         <Section5 />
         <Section6 />
+        <Section7 />
    
       </main>
       <Aside />

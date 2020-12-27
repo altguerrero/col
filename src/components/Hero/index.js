@@ -27,9 +27,9 @@ const Hero = () => {
         <GridContainer data-aos="fade-up"  className="py-12 lg:py-0 gap-8 lg:gap-0">
           <div className="mx-4 lg:mx-12 flex flex-col justify-center">
             <Title>¿Quieres comprar casa en Colombia?</Title>
-            <span className="block text-right text-lg sm:text-xl text-primary-dark font-bold mx-auto lg:mx-12 mt-2">
+            <SubTitle className="block text-right text-lg sm:text-xl text-primary-dark font-bold mx-auto lg:mx-12 mt-2">
               ¡Este, es el camino!
-            </span>
+            </SubTitle>
             <p className="text-white text-base -bottom-0sm:text-lg mt-8 w-3/4 lg:w-auto mx-auto">
               Accede a créditos hipotecarios y Leasing Habitacional con
               beneficios exclusivos para colombianos en el exterior, abre tu
@@ -140,8 +140,11 @@ const HeroBack = styled.div`
 
 `;
 
-const Container = tw.div`
- container  z-10
+const Container = styled.div`
+  width: 100%;
+  max-width: 1253px;
+  margin: 0 auto;
+  z-index: 10;
 `;
 const GridContainer = tw.div`
  grid lg:grid-cols-2
@@ -149,6 +152,9 @@ const GridContainer = tw.div`
 const Title = tw.h1`
   text-white font-bold text-2xl sm:text-4xl lg:text-5xl xl:text-6xl  text-center sm:text-left
 `;
+
+const SubTitle = styled.span``
+
 const FormContainer = styled.div`
   background-color: rgba(45, 45, 45, 0.75);
   margin: 0 auto;

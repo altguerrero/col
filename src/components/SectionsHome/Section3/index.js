@@ -97,16 +97,16 @@ const Section3 = () => {
     }
   `);
   return (
-    <section className="container">
-      <div className="grid grid-cols-2 py-20">
+    <section className="container ml-auto mr-auto lg:ml-0  lg:mr-auto">
+      <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 py-20">
         <div>
           <Gallery />
         </div>
-        <div className="flex flex-col justify-around">
-          <h3 className="text-center block w-1/2 mx-auto text-2xl font-bold text-secondary">
-            ¡Elige la casa que quieres donde siempre la quisiste!
-          </h3>
-          <div className="text-center text-gray-500 text-base mx-20 mt-12 ">
+        <div className="flex flex-col justify-around xl:pl-8 xl:pr-20 mb-12 lg:mb-0">
+          <Title className="text-center block mx-auto font-bold text-secondary mb-8">
+            ¡Elige la casa que quieres <br /> donde siempre la quisiste!
+          </Title>
+          <Description className="text-center text-gray-500 mx-20 ">
             <p>
               <b className="text-primary-light">
                 Más de 130 proyectos disponibles
@@ -118,13 +118,13 @@ const Section3 = () => {
               </strong>{" "}
               y la posibilidad de compra de inmuebles VIS y no VIS.
             </p>
-          </div>
-          <div className="flex mt-12 justify-around items-center">
-            <span className="block text-base text-secondary">
+          </Description>
+          <div className="flex flex-col sm:flex-row mt-12 justify-center items-center">
+            <span className="block text-center text-xl sm:text-2xl text-secondary sm:mr-12 mb-8 sm:mb-0">
               Solicita más información
             </span>
             <ButtomMain
-              className="font-bold"
+              className="font-bold text-xl sm:text-2xl"
               image={data.buttom.childImageSharp.fluid.originalImg}
               subimage={data.flecha.childImageSharp.fluid.originalImg}
               onClick={() => setModal(!modal)}
@@ -149,7 +149,6 @@ const ButtomMain = styled.button`
   display: block;
   width: 240px;
   height: 60px;
-  font-size: 1.125rem;
   position: relative;
 
   &:before {
@@ -164,5 +163,26 @@ const ButtomMain = styled.button`
     position: absolute;
     right: -20px;
     bottom: 0;
+  }
+`;
+
+const Title = styled.h2`
+  font-size: 25px;
+
+  @media (min-width: 640px) {
+    font-size: 35px;
+  }
+
+  @media (min-width: 1536px) {
+    font-size: 45px;
+  }
+`;
+const Description = styled.h2`
+  font-size: 16px;
+  @media (min-width: 640px) {
+    font-size: 20px;
+  }
+  @media (min-width: 1536px) {
+    font-size: 25px;
   }
 `;

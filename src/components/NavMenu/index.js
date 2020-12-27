@@ -40,7 +40,7 @@ const List = tw.ul`
 `;
 
 const Item = tw.li`
- text-center  text-lg text-gray-500 leading-5 mx-6 h-full w-full xl:w-48  h-16 xl:h-auto border-b xl:border-none
+ text-center  text-lg text-gray-500 leading-5 mx-6 w-full xl:w-48  h-16 xl:h-full border-b xl:border-none
 `;
 
 // markup
@@ -80,7 +80,7 @@ const NavMenu = () => {
           }
         >
           <img
-            className="h-8 md:h-auto"
+            className="h-6 md:h-12 mt-1"
             src={data.logo.childImageSharp.fluid.originalImg}
             alt="Colraices"
           />
@@ -97,7 +97,7 @@ const NavMenu = () => {
               <Item>
                 <Link
                   to="/"
-                  className="block h-full hover:bg-blue-900 transition duration-200  hover:text-white flex justify-center items-center "
+                  className="block h-full hover:bg-secondary transition duration-200  hover:text-white flex justify-center items-center "
                   activeClassName="active"
                 >
                   {link.text}
