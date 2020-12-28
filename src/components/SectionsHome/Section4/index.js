@@ -1,8 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import tw from "twin.macro";
 import Gallery from "./gallery";
 
 const Section4 = () => {

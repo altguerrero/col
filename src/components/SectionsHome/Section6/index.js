@@ -129,7 +129,7 @@ const ButtomMain = styled.a`
   }
 `;
 
-const VideoContainer = styled.div``;
+
 const Title = styled.div`
   line-height: 1.1;
   font-size: 25px;

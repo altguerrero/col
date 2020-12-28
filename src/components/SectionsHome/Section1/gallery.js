@@ -61,14 +61,12 @@ function Beta() {
         slidesPerView={1}
         pagination={{ clickable: true }}
         className=""
-        loop={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
-        className=""
       >
         <SwiperSlide>
           <div className="relative">

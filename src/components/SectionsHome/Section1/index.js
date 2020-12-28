@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
 import Gallery from "./gallery";
 import tw from "twin.macro";
 import ModalForm from "../../ModalForm";

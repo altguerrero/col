@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled from "@emotion/styled";
 import { Faceboock2, Youtube, Instagram, Linkedin } from "../Icons";
 import Img from "gatsby-image";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 // markup
 const Footer = () => {

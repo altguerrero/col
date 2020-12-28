@@ -1,30 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { Play } from "../../Icons";
-import ModalVideo from "../../ModalVideo";
 
 const Section7 = () => {
-  const [showModal, setShowModal] = useState(false);
-  const openModal = () => {
-    setShowModal((prev) => !prev);
-  };
-  const data = useStaticQuery(graphql`
-    query {
-      videoBack: file(
-        relativePath: { eq: "assets/video_back.jpg" }
-        childImageSharp: { children: {} }
-      ) {
-        id
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
   return (
     <Container
       id="section7"
@@ -38,6 +15,7 @@ const Section7 = () => {
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
+            title="Colraices"
           ></iframe>
         </VideoContainer>
       </div>
@@ -64,8 +42,6 @@ const Section7 = () => {
           <p>"Creemos en Colombia, trabajamos por ella".</p>
         </Description>
       </TextContainer>
-      {/* Modal */}
-      <ModalVideo showModal={showModal} setShowModal={setShowModal} />
     </Container>
   );
 };

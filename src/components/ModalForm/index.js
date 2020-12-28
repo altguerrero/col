@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "@emotion/styled";
-import tw from "twin.macro";
+
 
 // markup
 const ModalForm = ({ showModal, setShowModal }) => {
@@ -127,7 +127,7 @@ const ModalForm = ({ showModal, setShowModal }) => {
                         className="mr-2"
                       />
                       Acepto{" "}
-                      <a href="#" className="text-link inline-block mx-1 ">
+                      <a href="www.google.com" className="text-link inline-block mx-1 ">
                         política de tratamiento
                       </a>{" "}
                       de datos

@@ -125,12 +125,12 @@ const Section3 = () => {
             </p>
           </Description>
           <div className="flex flex-col sm:flex-row mt-12 justify-center items-center">
-            <span
+            <button
               onClick={openModal}
               className="block cursor-pointer text-center text-xl sm:text-2xl text-secondary transition-all duration-200 hover:opacity-75 sm:mr-12 mb-8 sm:mb-0"
             >
               Solicita más información
-            </span>
+            </button>
             <ButtomMain
               href="https://vitrinacolombia.colraices.com///buscador-comprar-casa-en-colombia/"
               target="_black"

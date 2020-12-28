@@ -3,7 +3,7 @@ import tw from "twin.macro";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "@emotion/styled";
 import { RowDown } from "../Icons";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 // markup
 const Hero = () => {
@@ -111,7 +111,7 @@ const Hero = () => {
                     className="mr-2"
                   />
                   Acepto{" "}
-                  <a href="#" className="text-link inline-block mx-1 ">
+                  <a href="ww.google.com" className="text-link inline-block mx-1 ">
                     política de tratamiento
                   </a>{" "}
                   de datos

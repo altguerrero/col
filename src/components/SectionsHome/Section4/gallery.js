@@ -1,7 +1,6 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";

@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import "./style.css";
 import styled from "@emotion/styled";
 import { Faceboock, Instagram, Youtube, Whatsapp } from "../Icons";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 // data
 const links = [
