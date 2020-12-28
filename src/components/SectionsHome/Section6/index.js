@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
+import ModalForm from "../../ModalForm";
 
 const Section6 = () => {
-  const [modal, setModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
 
   const data = useStaticQuery(graphql`
     query {
@@ -41,27 +46,53 @@ const Section6 = () => {
         </Title>
 
         <div className="w-3/4 xl:w-1/2 mx-auto text-center text-gray-500 text-base sm:text-lg">
+          <p className="font-bold ">¿Qué es la monetización de divisas?</p>
           <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem
+            Es el ingreso de divisas al país fruto de la venta de bienes y
+            activos ganados por concepto de trabajo o prestación de servicios en
+            el exterior.
+          </p>
+
+          <p className="font-bold mt-4">
+            ¿De qué tributos están exentos quienes monetizan recursos?
+          </p>
+          <a
+            href="https://www.redescolombia.org/"
+            rel="noopener nofollow"
+            target="black"
+            className="underline"
+          >
+            En el caso de la monetización la Ley 1565 de 2012 establece la
+            exención del Gravamen a los Movimientos Financieros (GMF).
+          </a>
+
+          <p className="font-bold mt-4">
+            ¿Está gravado con algún tributo el ingreso de divisas al país?
+          </p>
+          <p>No</p>
+
+          <p className="font-bold mt-4">
+            ¿Por qué medio deben ingresar al país las divisas fruto de la
+            monetización de recursos?
+          </p>
+          <p>
+            La monetización de recursos deberá realizarse a través de un
+            intermediario del mercado cambiario previa certificación de
+            proveniencia de los recursos.
           </p>
         </div>
         <ButtomMain
-          href="https://vitrinacolombia.colraices.com/hacer-cuentas/"
-          target="_blanck"
-          rel="noopener nofollow"
           className="mt-8 mx-auto font-bold text-xl focus:outline-none transform hover:scale-105 transition-all duration-200"
           image={data.buttom.childImageSharp.fluid.originalImg}
           subimage={data.flecha.childImageSharp.fluid.originalImg}
-          onClick={() => setModal(!modal)}
+          onClick={openModal}
         >
           ¡Hazlo ahora!
         </ButtomMain>
       </Background>
       <div className="w-1/2 h-1 bg-primary-light mx-auto rounded"></div>
+      {/* Modal */}
+      <ModalForm showModal={showModal} setShowModal={setShowModal} />
     </section>
   );
 };

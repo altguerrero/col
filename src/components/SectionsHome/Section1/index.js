@@ -160,21 +160,33 @@ const Section1 = () => {
             </h2>
             <div className="grid md:px-24 lg:px-0 grid-cols-2 xl:px-16 gap-4 sm:gap-12 mx-auto mt-12">
               <LogoAliado
+                href="https://vitrinacolombia.colraices.com/aliado-financiero-davivienda/"
+                target="_blanck"
+                rel="noopener nofollow"
                 normal={data.davivienda.childImageSharp.fluid.originalImg}
                 hover={data.daviviendaHover.childImageSharp.fluid.originalImg}
               />
 
               <LogoAliado
+                href="https://vitrinacolombia.colraices.com/aliado-financiero-bbva/"
+                target="_blanck"
+                rel="noopener nofollow"
                 normal={data.banco.childImageSharp.fluid.originalImg}
                 hover={data.bancoHover.childImageSharp.fluid.originalImg}
               />
 
               <LogoAliado
+                href="https://vitrinacolombia.colraices.com/aliado-financiero-bancolombia/"
+                target="_blanck"
+                rel="noopener nofollow"
                 normal={data.bancolombia.childImageSharp.fluid.originalImg}
                 hover={data.bancolombiaHover.childImageSharp.fluid.originalImg}
               />
 
               <LogoAliado
+                href="https://vitrinacolombia.colraices.com/aliado-financiero-giros-y-finanzas/"
+                target="_blanck"
+                rel="noopener nofollow"
                 normal={data.giros.childImageSharp.fluid.originalImg}
                 hover={data.girosHover.childImageSharp.fluid.originalImg}
               />
@@ -248,7 +260,8 @@ const Description = styled.div`
   }
 `;
 
-const LogoAliado = styled.div`
+const LogoAliado = styled.a`
+  display: block;
   background: url("${(props) => props.normal}");
   background-position: center;
   background-size: contain;

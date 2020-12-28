@@ -31,17 +31,14 @@ const Section7 = () => {
       className="container mr-auto ml-auto xl:ml-0 flex flex-col-reverse xl:grid py-20"
     >
       <div className="lg:px-12">
-        <VideoContainer
-          onClick={openModal}
-          className="relative cursor-pointer overflow-hidden rounded text-white hover:text-primary-light transition-all duration-200 h-full mx-auto"
-        >
-          <Img
-            className="cover transition-all duration-200 h-full"
-            fluid={data.videoBack.childImageSharp.fluid}
-          />
-          <div className="absolute w-full w-full h-full bg-black top-0 opacity-50 flex justify-center items-center ">
-            <Play wh="w-40 h-40 sm:w-48 sm:h-48" />
-          </div>
+        <VideoContainer>
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/GGsWd2y_HVY"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </VideoContainer>
       </div>
       <TextContainer className="flex flex-col justify-around  mb-12 mr-auto ml-auto xl:ml-0  xl:mb-0">
@@ -53,11 +50,18 @@ const Section7 = () => {
         </h3>
         <Description className="mx-12 mt-12 text-center font-semibold text-gray-700">
           <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren.
+            Son muchas las historias y momentos los que hacen parte de este
+            saludo de navidad y fin de año.
           </p>
+          <p>
+            Buscamos el bienestar de la familia Colombiana porque creemos que un
+            propósito se cumple, cuando miramos juntos hacia un mejor mañana.
+          </p>
+          <p>
+            Desde Colraices servicios inmobiliarios y financieros te decimos
+          </p>
+          <p>¡Gracias! Feliz navidad y un afortunado 2021.</p>
+          <p>"Creemos en Colombia, trabajamos por ella".</p>
         </Description>
       </TextContainer>
       {/* Modal */}
@@ -100,8 +104,9 @@ const TitleXl = styled.span`
 `;
 const Description = styled.div`
   font-size: 20px;
-  @media (min-width: 640px) {
-    font-size: 25px;
+
+  & p {
+    margin-bottom: 1rem;
   }
 `;
 export default Section7;
