@@ -26,10 +26,10 @@ const Header = tw.header`
   fixed w-full  bg-white shadow transition-all duration-300 z-50
 `;
 const Container = tw.div`
-  container  relative   h-full
+  container mx-auto relative   h-full
 `;
 const Logo = tw.div`
-  absolute top-0 mt-4 md:mt-3 px-4 transition-all duration-300  
+  absolute top-0 mt-4 md:mt-3 px-8 transition-all duration-300  
 `;
 const Menu = tw.nav`
   w-full h-full  transition-all duration-300 
@@ -165,7 +165,7 @@ const ListSocial = tw.ul`
     flex w-full p-4 justify-center mt-5
 `;
 const ItemSocial = tw.li`
-   text-white mx-3 hover:text-primary-dark transition-all duration-200 transform hover:scale-110
+   text-white mx-3 hover:text-primary-light transition-all duration-200 transform hover:scale-110
 `;
 
 const LinkSocial = styled.a`

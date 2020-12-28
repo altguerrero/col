@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
 import Gallery from "./gallery";
-import tw from "twin.macro";
+import ModalForm from "../../ModalForm";
 
 const Section3 = () => {
-  const [state, setstate] = useState(false);
-  const [modal, setModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
 
   const data = useStaticQuery(graphql`
     query {
@@ -120,20 +122,24 @@ const Section3 = () => {
             </p>
           </Description>
           <div className="flex flex-col sm:flex-row mt-12 justify-center items-center">
-            <span className="block text-center text-xl sm:text-2xl text-secondary sm:mr-12 mb-8 sm:mb-0">
+            <span
+              onClick={openModal}
+              className="block cursor-pointer text-center text-xl sm:text-2xl text-secondary transition-all duration-200 hover:opacity-75 sm:mr-12 mb-8 sm:mb-0"
+            >
               Solicita más información
             </span>
             <ButtomMain
-              className="font-bold text-xl sm:text-2xl"
+              className="font-bold text-xl sm:text-2xl focus:outline-none transform hover:scale-105 transition-all duration-200"
               image={data.buttom.childImageSharp.fluid.originalImg}
               subimage={data.flecha.childImageSharp.fluid.originalImg}
-              onClick={() => setModal(!modal)}
             >
               Explora
             </ButtomMain>
           </div>
         </div>
       </div>
+      {/* Modal */}
+      <ModalForm showModal={showModal} setShowModal={setShowModal} />
     </section>
   );
 };

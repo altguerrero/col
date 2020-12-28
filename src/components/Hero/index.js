@@ -21,16 +21,26 @@ const Hero = () => {
     }
   `);
 
+
+
   return (
-    <HeroBack className="h-full lg:h-screen pt-20" image={data.hero.childImageSharp.fluid.originalImg}>
+    <HeroBack
+      className="h-full min-h-screen pt-20"
+      image={data.hero.childImageSharp.fluid.originalImg}
+    >
       <Container>
-        <GridContainer data-aos="fade-up"  className="py-12 lg:py-0 gap-8 lg:gap-0">
-          <div className="mx-4 lg:mx-12 flex flex-col justify-center">
-            <Title>¿Quieres comprar casa en Colombia?</Title>
-            <SubTitle className="block text-right text-lg sm:text-xl text-primary-dark font-bold mx-auto lg:mx-12 mt-2">
+        <GridContainer
+          data-aos="fade-up"
+          className="py-12  xl:py-0 gap-8 lg:gap-0 px-4"
+        >
+          <div className="mx-4 flex flex-col justify-center">
+            <Title className="text-white font-bold text-center xl:text-left mt-8 xl:mt-0">
+              ¿Quieres comprar casa en Colombia?
+            </Title>
+            <SubTitle className="block text-center xl:text-right text-primary-dark font-bold mx-auto xl:mx-0 mt-2">
               ¡Este, es el camino!
             </SubTitle>
-            <p className="text-white text-base -bottom-0sm:text-lg mt-8 w-3/4 lg:w-auto mx-auto">
+            <p className="text-white text-base sm:text-lg mt-8 sm:w-3/4 xl:w-auto mx-auto mb-8 xl:mb-0">
               Accede a créditos hipotecarios y Leasing Habitacional con
               beneficios exclusivos para colombianos en el exterior, abre tu
               cuenta de ahorros y descubre más de 130 inmuebles por todo
@@ -38,7 +48,7 @@ const Hero = () => {
             </p>
           </div>
           <div>
-            <FormContainer className="w-3/4">
+            <FormContainer className="">
               <h3 className="text-white font-semibold text-lg sm:text-2xl text-center leading-6">
                 Déjanos tu datos,
               </h3>
@@ -111,6 +121,10 @@ const Hero = () => {
           </div>
         </GridContainer>
       </Container>
+
+      <span className="hidden xl:inline-block absolute bottom-0 text-lg text-white mb-8">
+        Demos juntos el próximo paso
+      </span>
     </HeroBack>
   );
 };
@@ -135,9 +149,7 @@ const HeroBack = styled.div`
     top: 0;
     background-color: #2d2d2d;
     opacity: 0.75;
-   
   }
-
 `;
 
 const Container = styled.div`
@@ -147,15 +159,30 @@ const Container = styled.div`
   z-index: 10;
 `;
 const GridContainer = tw.div`
- grid lg:grid-cols-2
+ grid xl:grid-cols-2
 `;
-const Title = tw.h1`
-  text-white font-bold text-2xl sm:text-4xl lg:text-5xl xl:text-6xl  text-center sm:text-left
+const Title = styled.h1`
+  line-height: 1;
+  font-size: 35px;
+
+  @media (min-width: 640px) {
+    font-size: 57px;
+  }
+  @media (min-width: 768px) {
+    font-size: 67px;
+  }
 `;
 
-const SubTitle = styled.span``
+const SubTitle = styled.span`
+  font-size: 20px;
+  @media (min-width: 640px) {
+    font-size: 30px;
+  }
+`;
 
 const FormContainer = styled.div`
+  width: 100%;
+  max-width: 500px;
   background-color: rgba(45, 45, 45, 0.75);
   margin: 0 auto;
   padding: 1rem 1.75rem;

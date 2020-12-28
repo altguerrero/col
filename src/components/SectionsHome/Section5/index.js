@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import tw from "twin.macro";
 import { Pig, Bill, Card } from "../../Icons";
+import ModalForm from "../../ModalForm";
 
 const Section4 = () => {
-  const [modal, setModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
 
   const data = useStaticQuery(graphql`
     query {
@@ -91,10 +95,10 @@ const Section4 = () => {
           </div>
 
           <ButtomMain
-            className="mt-12 mx-auto font-bold text-xl"
+            className="mt-12 mx-auto font-bold text-xl focus:outline-none transform hover:scale-105 transition-all duration-200"
             image={data.buttom.childImageSharp.fluid.originalImg}
             subimage={data.flecha.childImageSharp.fluid.originalImg}
-            onClick={() => setModal(!modal)}
+            onClick={openModal}
           >
             ¡Abre tu cuenta!
           </ButtomMain>
@@ -106,6 +110,8 @@ const Section4 = () => {
           </div>
         </div>
       </div>
+      {/* Modal */}
+      <ModalForm showModal={showModal} setShowModal={setShowModal} />
     </section>
   );
 };
