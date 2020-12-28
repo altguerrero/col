@@ -3,10 +3,13 @@ import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Play } from "../../Icons";
+import ModalVideo from "../../ModalVideo";
 
 const Section7 = () => {
-  const [modal, setModal] = useState(false);
-
+  const [showModal, setShowModal] = useState(false);
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
   const data = useStaticQuery(graphql`
     query {
       videoBack: file(
@@ -23,9 +26,15 @@ const Section7 = () => {
     }
   `);
   return (
-    <Container id="section7" className="container mr-auto ml-auto xl:ml-0 flex flex-col-reverse xl:grid py-20">
+    <Container
+      id="section7"
+      className="container mr-auto ml-auto xl:ml-0 flex flex-col-reverse xl:grid py-20"
+    >
       <div className="lg:px-12">
-        <VideoContainer className="relative overflow-hidden rounded text-white hover:text-primary-light transition-all duration-200 h-full mx-auto">
+        <VideoContainer
+          onClick={openModal}
+          className="relative cursor-pointer overflow-hidden rounded text-white hover:text-primary-light transition-all duration-200 h-full mx-auto"
+        >
           <Img
             className="cover transition-all duration-200 h-full"
             fluid={data.videoBack.childImageSharp.fluid}
@@ -51,16 +60,18 @@ const Section7 = () => {
           </p>
         </Description>
       </TextContainer>
+      {/* Modal */}
+      <ModalVideo showModal={showModal} setShowModal={setShowModal} />
     </Container>
   );
 };
 
 const Container = styled.section`
-    grid-template-columns: 742px 1fr;
+  grid-template-columns: 742px 1fr;
 `;
 
 const TextContainer = styled.div`
-    max-width: 658px;
+  max-width: 658px;
 `;
 const VideoContainer = styled.div`
   max-width: 742px;

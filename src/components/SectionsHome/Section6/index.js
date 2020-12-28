@@ -50,7 +50,10 @@ const Section6 = () => {
           </p>
         </div>
         <ButtomMain
-          className="mt-8 mx-auto font-bold text-xl"
+          href="https://vitrinacolombia.colraices.com/hacer-cuentas/"
+          target="_blanck"
+          rel="noopener nofollow"
+          className="mt-8 mx-auto font-bold text-xl focus:outline-none transform hover:scale-105 transition-all duration-200"
           image={data.buttom.childImageSharp.fluid.originalImg}
           subimage={data.flecha.childImageSharp.fluid.originalImg}
           onClick={() => setModal(!modal)}
@@ -67,13 +70,15 @@ const Background = styled.div`
   background-color: #f6f6f6;
 `;
 
-const ButtomMain = styled.button`
+const ButtomMain = styled.a`
   background: url("${(props) => props.image}");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   color: #fff;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 240px;
   height: 60px;
   position: relative;

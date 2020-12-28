@@ -99,7 +99,10 @@ const Section3 = () => {
     }
   `);
   return (
-    <section id="section3" className="container ml-auto mr-auto lg:ml-0  lg:mr-auto">
+    <section
+      id="section3"
+      className="container ml-auto mr-auto lg:ml-0  lg:mr-auto"
+    >
       <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 py-20">
         <div>
           <Gallery />
@@ -129,6 +132,9 @@ const Section3 = () => {
               Solicita más información
             </span>
             <ButtomMain
+              href="https://vitrinacolombia.colraices.com///buscador-comprar-casa-en-colombia/"
+              target="_black"
+              rel="noopener nofollow"
               className="font-bold text-xl sm:text-2xl focus:outline-none transform hover:scale-105 transition-all duration-200"
               image={data.buttom.childImageSharp.fluid.originalImg}
               subimage={data.flecha.childImageSharp.fluid.originalImg}
@@ -146,13 +152,15 @@ const Section3 = () => {
 
 export default Section3;
 
-const ButtomMain = styled.button`
+const ButtomMain = styled.a`
   background: url("${(props) => props.image}");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   color: #fff;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 240px;
   height: 60px;
   position: relative;
