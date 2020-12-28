@@ -1,9 +1,9 @@
 import * as React from "react";
-import tw from "twin.macro";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "@emotion/styled";
 import { Faceboock2, Youtube, Instagram, Linkedin } from "../Icons";
 import Img from "gatsby-image";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 // markup
 const Footer = () => {
@@ -143,13 +143,46 @@ const Footer = () => {
         <div>
           <div className="text-white text-center text-base">
             <p className="mb-4">
-              <span className="inline-block mx-2">Crédito Hipotecario</span> -{" "}
-              <span className="inline-block mx-2">Servicios Inmobiliarios</span>
+              <Link
+                to="section1"
+                offset={-70}
+                className="inline-block mx-2 cursor-pointer transition duration-200 hover:opacity-75"
+              >
+                Crédito Hipotecario
+              </Link>{" "}
+              -{" "}
+              <Link
+                to="section3"
+                offset={-70}
+                className="inline-block mx-2 cursor-pointer transition duration-200 hover:opacity-75"
+              >
+                Servicios Inmobiliarios
+              </Link>
             </p>
             <p>
-              <span className="inline-block mx-2">Cuenta de ahorros</span> -{" "}
-              <span className="inline-block mx-2">Monetización</span> -{" "}
-              <span className="inline-block mx-2">Nosotros</span>
+              <Link
+                to="section5"
+                offset={-70}
+                className="inline-block mx-2 cursor-pointer transition duration-200 hover:opacity-75"
+              >
+                Cuenta de ahorros
+              </Link>{" "}
+              -{" "}
+              <Link
+                to="section6"
+                offset={-70}
+                className="inline-block mx-2 cursor-pointer transition duration-200 hover:opacity-75"
+              >
+                Monetización
+              </Link>{" "}
+              -{" "}
+              <Link
+                to="section7"
+                offset={-70}
+                className="inline-block mx-2 cursor-pointer transition duration-200 hover:opacity-75"
+              >
+                Nosotros
+              </Link>
             </p>
           </div>
           <div className="text-white flex justify-center mt-12">

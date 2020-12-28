@@ -33,7 +33,7 @@ const Section6 = () => {
     }
   `);
   return (
-    <section>
+    <section id="section6">
       <div className="w-1/2 h-1 bg-primary-light mx-auto rounded px-4"></div>
       <Background className="pb-8">
         <Title className="mx-auto font-bold text-secondary text-center py-8 px-4">

@@ -17,7 +17,6 @@ import Section7 from "../components/SectionsHome/Section7";
 
 // markup
 const IndexPage = () => {
-
   return (
     <>
       <Menu />

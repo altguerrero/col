@@ -145,7 +145,7 @@ const Section1 = () => {
     }
   `);
   return (
-    <section>
+    <section id="section1">
       <Container className="mx-auto lg:ml-auto transform lg:translate-x-6">
         <div className="lg:grid lg:grid-cols-2 py-20 ">
           <div className="mb-12 lg:mb-0 px-4 sm:px-0">

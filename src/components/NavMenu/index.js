@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import tw from "twin.macro";
 import { useStaticQuery, graphql } from "gatsby";
-import { Link } from "gatsby";
 import "./style.css";
 import styled from "@emotion/styled";
 import { Faceboock, Instagram, Youtube, Whatsapp } from "../Icons";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 // data
 const links = [
   {
     text: "Crédito de vivienda",
-    url: "https://www.gatsbyjs.com/docs/",
+    url: "section1",
   },
   {
     text: "Portal Inmobiliario",
-    url: "https://www.gatsbyjs.com/tutorial/",
+    url: "section3",
   },
   {
     text: "Cuenta de ahorros y monetización",
-    url: "https://www.gatsbyjs.com/tutorial/",
+    url: "section5",
   },
 ];
 
@@ -92,11 +92,12 @@ const NavMenu = () => {
               : "  xl:block opacity-0 xl:opacity-100 "
           }
         >
-          <List >
+          <List>
             {links.map((link) => (
               <Item>
                 <Link
-                  to="/"
+                  to={link.url}
+                  offset={-70}
                   className="block h-full hover:bg-secondary transition duration-200  hover:text-white flex justify-center items-center "
                   activeClassName="active"
                 >

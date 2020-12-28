@@ -23,7 +23,7 @@ const Section7 = () => {
     }
   `);
   return (
-    <Container className="container mr-auto ml-auto xl:ml-0 flex flex-col-reverse xl:grid py-20">
+    <Container id="section7" className="container mr-auto ml-auto xl:ml-0 flex flex-col-reverse xl:grid py-20">
       <div className="lg:px-12">
         <VideoContainer className="relative overflow-hidden rounded text-white hover:text-primary-light transition-all duration-200 h-full mx-auto">
           <Img
@@ -55,7 +55,7 @@ const Section7 = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
     grid-template-columns: 742px 1fr;
 `;
 

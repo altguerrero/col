@@ -52,7 +52,7 @@ const Section4 = () => {
     }
   `);
   return (
-    <section>
+    <section id="section5">
       <div className="container ml-auto mr-auto lg:mr-0 lg:grid grid-cols-2 py-20 transform lg:translate-x-4">
         <div className="mb-12 lg:mb-0 px-4">
           <h2 className="text-center font-bold">

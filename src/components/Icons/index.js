@@ -183,3 +183,22 @@ export const Play = ({ wh }) => (
     ></path>
   </svg>
 );
+
+export const RowDown = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="37.039"
+    height="11.82"
+    viewBox="0 0 37.039 11.82"
+  >
+    <path
+      id="Trazado_9012"
+      data-name="Trazado 9012"
+      d="M965.089-6842.725l17.856,8.8,17.856-8.8"
+      transform="translate(-964.426 6844.07)"
+      fill="none"
+      stroke="#caa55e"
+      stroke-width="3"
+    />
+  </svg>
+);

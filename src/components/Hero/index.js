@@ -2,6 +2,8 @@ import * as React from "react";
 import tw from "twin.macro";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "@emotion/styled";
+import { RowDown } from "../Icons";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 // markup
 const Hero = () => {
@@ -20,8 +22,6 @@ const Hero = () => {
       }
     }
   `);
-
-
 
   return (
     <HeroBack
@@ -122,9 +122,14 @@ const Hero = () => {
         </GridContainer>
       </Container>
 
-      <span className="hidden xl:inline-block absolute bottom-0 text-lg text-white mb-8">
-        Demos juntos el próximo paso
-      </span>
+      <Link
+        to="section1"
+        offset={-70}
+        className="hidden cursor-pointer xl:flex flex-col items-center absolute bottom-0 text-lg text-white mb-4 "
+      >
+        <span className="inline-block mb-4">Demos juntos el próximo paso</span>
+        <RowDown />
+      </Link>
     </HeroBack>
   );
 };

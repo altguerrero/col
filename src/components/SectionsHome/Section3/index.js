@@ -99,7 +99,7 @@ const Section3 = () => {
     }
   `);
   return (
-    <section className="container ml-auto mr-auto lg:ml-0  lg:mr-auto">
+    <section id="section3" className="container ml-auto mr-auto lg:ml-0  lg:mr-auto">
       <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 py-20">
         <div>
           <Gallery />
