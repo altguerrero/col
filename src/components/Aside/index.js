@@ -19,7 +19,7 @@ const Link = styled.a`
 // markup
 const Aside = () => {
   return (
-    <aside>
+    <aside className="hidden lg:block">
       <List>
         <Item>
           <Link href="www.faceboock.com" rel="noopener nofollow">

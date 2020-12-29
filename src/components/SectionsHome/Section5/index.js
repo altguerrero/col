@@ -91,7 +91,7 @@ const Section4 = () => {
           </div>
 
           <div className="text-center font-semibol text-gray-700 mt-12 text-base sm:text-lg">
-            <p>"Si estas ahorrando, estas teniendo exito"</p>
+            <p>"Si estás ahorrando, estas teniendo éxito"</p>
           </div>
 
           <ButtomMain

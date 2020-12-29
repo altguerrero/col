@@ -193,7 +193,7 @@ const Section1 = () => {
             <Description className="text-center mx-auto text-gray-500 mx-20 mt-12 ">
               <p>
                 Disfruta de tasas de interés especiales de{" "}
-                <b>x.x% efectivo anual</b>, además de{" "}
+                <b>11,00% inmuebles vis y NO VIS 10,40% (superior 200MM)</b>, además de{" "}
                 <strong>beneficios exclusivos</strong> para colombianos en el
                 exterior.
               </p>

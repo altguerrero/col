@@ -116,7 +116,7 @@ const Section2 = () => {
           </div>
 
           <Description className="text-center text-secondary font-semibold text-center py-8">
-            ¡Ahora queremos ayudarte a ti a comprar tu casa en Colombia desde el
+            ¡Ahora queremos ayudarte a comprar tu casa en Colombia desde el
             exterior!
           </Description>
         </div>

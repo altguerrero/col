@@ -86,6 +86,52 @@ function Beta() {
           }
         }
       }
+
+      colpatria: file(
+        relativePath: { eq: "constructoras/colpatria_normal.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
+          }
+        }
+      }
+      colpatriaHover: file(
+        relativePath: { eq: "constructoras/colpatria_hover.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
+          }
+        }
+      }
+
+      jaramillo: file(
+        relativePath: { eq: "constructoras/jaramillo_normal.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
+          }
+        }
+      }
+      jaramilloHover: file(
+        relativePath: { eq: "constructoras/jaramillo_hover.png" }
+        childImageSharp: { children: {} }
+      ) {
+        id
+        childImageSharp {
+          fluid {
+            originalImg
+          }
+        }
+      }
     }
   `);
   return (
@@ -130,6 +176,18 @@ function Beta() {
           <LogoAliado
             normal={data.camu.childImageSharp.fluid.originalImg}
             hover={data.camuHover.childImageSharp.fluid.originalImg}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <LogoAliado
+            normal={data.colpatria.childImageSharp.fluid.originalImg}
+            hover={data.colpatriaHover.childImageSharp.fluid.originalImg}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <LogoAliado
+            normal={data.jaramillo.childImageSharp.fluid.originalImg}
+            hover={data.jaramilloHover.childImageSharp.fluid.originalImg}
           />
         </SwiperSlide>
       </Swiper>
