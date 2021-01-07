@@ -51,14 +51,15 @@ const Footer = () => {
               <div className="map__info absolute top-0 transform -translate-y-4">
                 <div className="text-white w-40 bg-white px-1 py-2 text-center rounded">
                   <p className="text-sm font-bold text-primary-light">
-                    Colombia - Bogota
+                    Santiago de Chile
                   </p>
                   <p className="text-xs font-semibold text-gray-500">
-                    +571 123 456 7890
+                    (+56) 2323109547
                   </p>
                   <p className="text-xs font-semibold text-gray-500">
                     info@colraices.com
                   </p>
+                  <b className="text-xs text-gray-500">8am a 5:30pm</b>
                 </div>
               </div>
             </MapCity>
@@ -73,11 +74,17 @@ const Footer = () => {
                     Colombia - Bogota
                   </p>
                   <p className="text-xs font-semibold text-gray-500">
-                    +571 123 456 7890
+                    (+ 57)13288939
+                  </p>
+                  <p className="text-xs font-semibold text-gray-500">
+                    Calle 100 # 13 - 41 of: 102
                   </p>
                   <p className="text-xs font-semibold text-gray-500">
                     info@colraices.com
                   </p>
+                  <b className="text-xs font-bold text-gray-500">
+                    8am a 5:30pm
+                  </b>
                 </div>
               </div>
             </MapCity>
@@ -89,13 +96,16 @@ const Footer = () => {
               <div className="map__info absolute top-0 transform -translate-y-4">
                 <div className="text-white w-40 bg-white px-1 py-2 text-center rounded">
                   <p className="text-sm font-bold text-primary-light">
-                    Colombia - Bogota
+                    New Jersey
                   </p>
                   <p className="text-xs font-semibold text-gray-500">
-                    +571 123 456 7890
+                    +1 (908) 423-9896
                   </p>
                   <p className="text-xs font-semibold text-gray-500">
                     info@colraices.com
+                  </p>
+                  <p className="text-xs font-bold text-gray-500">
+                    8am a 5:30pm
                   </p>
                 </div>
               </div>
@@ -108,13 +118,19 @@ const Footer = () => {
               <div className="map__info absolute top-0 transform -translate-y-4">
                 <div className="text-white w-40 bg-white px-1 py-2 text-center rounded">
                   <p className="text-sm font-bold text-primary-light">
-                    Colombia - Bogota
+                    Barcelona
                   </p>
                   <p className="text-xs font-semibold text-gray-500">
-                    +571 123 456 7890
+                    34 (91) 0602824
+                  </p>
+                  <p className="text-xs font-semibold text-gray-500">
+                    (Madrid) Avenida del Mediterraneo # 5
                   </p>
                   <p className="text-xs font-semibold text-gray-500">
                     info@colraices.com
+                  </p>
+                  <p className="text-xs font-bold text-gray-500">
+                    9am a las 2pm y de 4pm a 8pm
                   </p>
                 </div>
               </div>
@@ -127,13 +143,16 @@ const Footer = () => {
               <div className="map__info absolute top-0 transform -translate-y-4">
                 <div className="text-white w-40 bg-white px-1 py-2 text-center rounded">
                   <p className="text-sm font-bold text-primary-light">
-                    Colombia - Bogota
+                    Inglaterra
                   </p>
                   <p className="text-xs font-semibold text-gray-500">
-                    +571 123 456 7890
+                    +34 (91) 0602824
                   </p>
                   <p className="text-xs font-semibold text-gray-500">
                     info@colraices.com
+                  </p>
+                  <p className="text-xs font-bold text-gray-500">
+                    8am a 5:30pm
                   </p>
                 </div>
               </div>
@@ -186,18 +205,38 @@ const Footer = () => {
             </p>
           </div>
           <div className="text-white flex justify-center mt-12">
-            <div className="border border-white rounded-full cursor-pointer p-2 mr-4 hover:bg-white hover:text-secondary duration-200 transition-all">
+            <a
+              href="https://www.facebook.com/colraices/"
+              rel="noopener nofollow"
+              target="blanck"
+              className="block border border-white rounded-full cursor-pointer p-2 mr-4 hover:bg-white hover:text-secondary duration-200 transition-all"
+            >
               <Faceboock2 wh="h-5 w-5" />
-            </div>
-            <div className="border border-white rounded-full cursor-pointer p-2 mr-4 hover:bg-white hover:text-secondary duration-200 transition-all">
+            </a>
+            <a
+              href="https://www.instagram.com/colraices/?hl=es-la"
+              rel="noopener nofollow"
+              target="blanck"
+              className="block border border-white rounded-full cursor-pointer p-2 mr-4 hover:bg-white hover:text-secondary duration-200 transition-all"
+            >
               <Instagram wh="h-5 w-5" />
-            </div>
-            <div className="border border-white rounded-full cursor-pointer p-2 mr-4 hover:bg-white hover:text-secondary duration-200 transition-all">
+            </a>
+            <a
+              href="https://www.linkedin.com/company/colraices/about/"
+              rel="noopener nofollow"
+              target="blanck"
+              className="block border border-white rounded-full cursor-pointer p-2 mr-4 hover:bg-white hover:text-secondary duration-200 transition-all"
+            >
               <Linkedin wh="h-5 w-5" />
-            </div>
-            <div className="border border-white rounded-full cursor-pointer p-2 hover:bg-white hover:text-secondary duration-200 transition-all">
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCiBystYzqzabHULJWwgAjnw"
+              rel="noopener nofollow"
+              target="blanck"
+              className="block border border-white rounded-full cursor-pointer p-2 hover:bg-white hover:text-secondary duration-200 transition-all"
+            >
               <Youtube wh="h-5 w-5" />
-            </div>
+            </a>
           </div>
           <div>
             <div className="text-base text-center mt-12 text-white">

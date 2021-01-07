@@ -1,11 +1,52 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "@emotion/styled";
-
+import axios from "axios";
 
 // markup
 const ModalForm = ({ showModal, setShowModal }) => {
   const modalRef = useRef();
+
+  const [datos, setDatos] = useState({
+    // Nombre
+    P50_CAMPO1: "",
+    // Apellidos
+    P50_CAMPO2: "Default",
+    // Correo
+    P50_CAMPO3: "",
+    // Telefono
+    P50_CAMPO4: "",
+  });
+
+  const handleInputChange = (e) => {
+    setDatos({
+      ...datos,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const sendDatos = async (e) => {
+    e.preventDefault();
+    const params = {
+      p:
+        "500:50:::::P50_CAMPO1,P50_CAMPO2,P50_CAMPO3,P50_CAMPO4:TestEditor,PEREZ,ttt@hotmail.com,34785987",
+    };
+    const headers = {
+      "Content-Security-Policy": "upgrade-insecure-requests",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Origin": "http://localhost:9000",
+      "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
+    };
+    const url = "http://52.24.213.243:8070/apex/f?";
+    axios
+      .post(url, params, headers)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   const animation = useSpring({
     config: {
@@ -69,30 +110,34 @@ const ModalForm = ({ showModal, setShowModal }) => {
                   <h3 className="text-secondary font-semibold text-lg sm:text-2xl text-center leading-6">
                     ¡Nosotros te llamamos!
                   </h3>
-                  <form className="mt-4">
+                  <form className="mt-4" onSubmit={sendDatos}>
                     <input
                       className="block w-full px-4 py-2 text-black border rounded-lg "
                       type="text"
-                      name="Nombre"
+                      name="P50_CAMPO1"
                       placeHolder="Tu nombre"
                       required
+                      onChange={handleInputChange}
                     />
                     <input
                       className="mt-4 block w-full px-4 py-2 text-black border rounded-lg "
                       type="email"
-                      name="Correo"
+                      name="P50_CAMPO3"
                       placeHolder="Tu correo electrónico"
                       required
+                      onChange={handleInputChange}
                     />
                     <input
                       className="mt-4 block w-full px-4 py-2 text-black border rounded-lg "
                       type="tel"
-                      name="Telefono"
+                      name="P50_CAMPO4"
                       placeHolder="Tu teléfono"
                       required
+                      onChange={handleInputChange}
                     />
                     <select
                       required
+                      name="servicio"
                       className="mt-4 block w-full px-4 py-2 text-black border rounded-lg"
                     >
                       <option disabled selected>
@@ -107,8 +152,8 @@ const ModalForm = ({ showModal, setShowModal }) => {
                       <option value="Cuenta de ahorros">
                         Cuenta de ahorros
                       </option>
-                      <option value="Servicios inmoviliario">
-                        Servicios inmoviliario
+                      <option value="Servicios inmobiliario">
+                        Servicios inmobiliario
                       </option>
                       <option value="Otros">Otros</option>
                     </select>
@@ -127,7 +172,10 @@ const ModalForm = ({ showModal, setShowModal }) => {
                         className="mr-2"
                       />
                       Acepto{" "}
-                      <a href="www.google.com" className="text-link inline-block mx-1 ">
+                      <a
+                        href="www.google.com"
+                        className="text-link inline-block mx-1 "
+                      >
                         política de tratamiento
                       </a>{" "}
                       de datos

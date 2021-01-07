@@ -22,22 +22,22 @@ const Aside = () => {
     <aside className="hidden lg:block">
       <List>
         <Item>
-          <Link href="www.faceboock.com" rel="noopener nofollow">
+          <Link href="https://www.facebook.com/colraices/" rel="noopener nofollow" target="_blanck">
             <Faceboock wh="h-6 w-6" />
           </Link>
         </Item>
         <Item>
-          <Link href="www.faceboock.com" rel="noopener nofollow">
+          <Link href="https://www.instagram.com/colraices/?hl=es-la" rel="noopener nofollow" target="_blanck">
             <Instagram wh="h-6 w-6" />
           </Link>
         </Item>
         <Item>
-          <Link href="www.faceboock.com" rel="noopener nofollow">
+          <Link href="https://www.youtube.com/channel/UCiBystYzqzabHULJWwgAjnw" rel="noopener nofollow" target="_blanck">
             <Youtube wh="h-6 w-6" />
           </Link>
         </Item>
         <Item>
-          <Link href="www.faceboock.com" rel="noopener nofollow">
+          <Link href="www.faceboock.com" rel="noopener nofollow" target="_blanck">
             <Whatsapp wh="h-6 w-6" />
           </Link>
         </Item>

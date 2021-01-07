@@ -91,8 +91,8 @@ const Hero = () => {
                     Leasing Habitacional
                   </option>
                   <option value="Cuenta de ahorros">Cuenta de ahorros</option>
-                  <option value="Servicios inmoviliario">
-                    Servicios inmoviliario
+                  <option value="Servicios inmobiliario">
+                    Servicios inmobiliario
                   </option>
                   <option value="Otros">Otros</option>
                 </select>
@@ -111,7 +111,10 @@ const Hero = () => {
                     className="mr-2"
                   />
                   Acepto{" "}
-                  <a href="ww.google.com" className="text-link inline-block mx-1 ">
+                  <a
+                    href="ww.google.com"
+                    className="text-link inline-block mx-1 "
+                  >
                     política de tratamiento
                   </a>{" "}
                   de datos
